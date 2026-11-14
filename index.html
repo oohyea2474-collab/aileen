@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>카페 아일린 | Cafe Aileen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf6f0;
+      --surface: #ffffff;
+      --text: #3b2a20;
+      --muted: #7a6656;
+      --accent: #a0613a;
+      --accent-dark: #7d4a2b;
+      --line: #eadfd3;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(250, 246, 240, 0.92);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { font-family: "Noto Serif KR", serif; font-size: 1.3rem; font-weight: 700; color: var(--accent-dark); }
+    .nav ul { display: flex; gap: 24px; list-style: none; font-size: 0.95rem; }
+    .nav ul a:hover { color: var(--accent); }
+
+    /* Hero */
+    .hero {
+      min-height: 78vh;
+      display: flex; align-items: center;
+      background:
+        linear-gradient(rgba(40, 25, 15, 0.55), rgba(40, 25, 15, 0.55)),
+        url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600&q=80") center/cover;
+      color: #fff;
+      text-align: center;
+    }
+    .hero .container { width: 100%; }
+    .hero h1 { font-family: "Noto Serif KR", serif; font-size: clamp(2rem, 6vw, 3.4rem); margin-bottom: 16px; }
+    .hero p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 32px; }
+    .btn {
+      display: inline-block; padding: 14px 32px; border-radius: 999px;
+      background: var(--accent); color: #fff; font-weight: 500;
+      transition: background 0.2s;
+    }
+    .btn:hover { background: var(--accent-dark); }
+
+    /* Sections */
+    section { padding: 88px 0; }
+    .section-title { text-align: center; margin-bottom: 48px; }
+    .section-title span { color: var(--accent); font-size: 0.9rem; letter-spacing: 0.15em; }
+    .section-title h2 { font-family: "Noto Serif KR", serif; font-size: 2rem; margin-top: 4px; }
+
+    /* About */
+    .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+    .feature {
+      background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
+      padding: 32px 24px; text-align: center;
+    }
+    .feature .icon { font-size: 2.2rem; margin-bottom: 12px; }
+    .feature h3 { margin-bottom: 8px; }
+    .feature p { color: var(--muted); font-size: 0.95rem; }
+
+    /* Menu */
+    #menu { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px 48px; }
+    .menu-item { display: flex; justify-content: space-between; gap: 16px; padding: 16px 0; border-bottom: 1px dashed var(--line); }
+    .menu-item h4 { font-weight: 500; }
+    .menu-item p { color: var(--muted); font-size: 0.88rem; }
+    .price { color: var(--accent-dark); font-weight: 700; white-space: nowrap; }
+
+    /* Visit */
+    .visit-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .info-card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 32px; }
+    .info-card h3 { margin-bottom: 12px; color: var(--accent-dark); }
+    .info-card li { list-style: none; color: var(--muted); }
+
+    footer { text-align: center; padding: 32px 0; color: var(--muted); font-size: 0.85rem; }
+
+    @media (max-width: 600px) {
+      .nav ul { gap: 14px; font-size: 0.85rem; }
+      section { padding: 64px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo">Cafe Aileen</a>
+      <ul>
+        <li><a href="#about">소개</a></li>
+        <li><a href="#menu">메뉴</a></li>
+        <li><a href="#visit">오시는 길</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>하루의 쉼표, 카페 아일린</h1>
+      <p>매일 아침 직접 로스팅한 원두로 정성껏 내린 커피 한 잔</p>
+      <a href="#menu" class="btn">메뉴 보기</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-title">
+        <span>ABOUT</span>
+        <h2>우리 카페를 소개해요</h2>
+      </div>
+      <div class="about-grid">
+        <div class="feature">
+          <div class="icon">☕</div>
+          <h3>직접 로스팅</h3>
+          <p>매주 소량씩 로스팅해 가장 신선한 원두만 사용합니다.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🥐</div>
+          <h3>매일 굽는 디저트</h3>
+          <p>아침마다 매장에서 직접 구운 빵과 디저트를 준비해요.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🌿</div>
+          <h3>편안한 공간</h3>
+          <p>햇살 좋은 창가와 조용한 음악이 있는 아늑한 공간입니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu">
+    <div class="container">
+      <div class="section-title">
+        <span>MENU</span>
+        <h2>대표 메뉴</h2>
+      </div>
+      <div class="menu-grid">
+        <div class="menu-item"><div><h4>아메리카노</h4><p>고소하고 깔끔한 하우스 블렌드</p></div><span class="price">4,500원</span></div>
+        <div class="menu-item"><div><h4>카페 라떼</h4><p>부드러운 우유와 에스프레소의 조화</p></div><span class="price">5,000원</span></div>
+        <div class="menu-item"><div><h4>바닐라 빈 라떼</h4><p>천연 바닐라 빈으로 만든 시럽</p></div><span class="price">5,500원</span></div>
+        <div class="menu-item"><div><h4>핸드드립</h4><p>오늘의 싱글 오리진 원두</p></div><span class="price">6,000원</span></div>
+        <div class="menu-item"><div><h4>크루아상</h4><p>버터 향 가득한 프랑스식 크루아상</p></div><span class="price">3,800원</span></div>
+        <div class="menu-item"><div><h4>바스크 치즈케이크</h4><p>겉은 그을리고 속은 촉촉하게</p></div><span class="price">6,500원</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit">
+    <div class="container">
+      <div class="section-title">
+        <span>VISIT</span>
+        <h2>오시는 길</h2>
+      </div>
+      <div class="visit-grid">
+        <div class="info-card">
+          <h3>영업시간</h3>
+          <ul>
+            <li>평일 08:00 – 21:00</li>
+            <li>주말 10:00 – 22:00</li>
+            <li>매주 월요일 휴무</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <h3>위치</h3>
+          <ul>
+            <li>서울특별시 OO구 OO로 123</li>
+            <li>OO역 2번 출구 도보 5분</li>
+            <li>문의 02-000-0000</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Cafe Aileen. All rights reserved.
+  </footer>
+</body>
+</html>
